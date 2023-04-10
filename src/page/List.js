@@ -22,9 +22,9 @@ function List() {
     window.scrollTo(0, remScroll);
   }, [pathname]);
 
-  if(data.length == 0){
-    return <div className='loading-anim'> 식자재를 불러오는 중입니다...</div>
-  }
+  // if(data.length == 0){
+  //   return <div className='loading-anim'> 식자재를 불러오는 중입니다...</div>
+  // }
   return (
     <>
       <div className='header-empty-box'/>
