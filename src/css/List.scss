@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Poppins:wght@400&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p,a, 
+img, ul, li, nav,video, figure{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+
+
+@mixin flex($a: space-around, $b: center) {
+    display: flex;
+    justify-content: $a;
+    align-items: $b;
+    @content;
+}
+$mC : #53A069;
+$sC : #2E483E;
+
+
+.list{
+    box-shadow: 0 0 60px rgba(0,0,0,.2);
+    position: relative;
+    width: 100%;
+    @include flex(){
+        flex-direction: column;
+    }
+    .l-top{
+        width: 100%;
+        height: 200px;
+        background-color: $mC;
+        position: relative;
+        overflow: hidden;
+        .food-icon{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            &:nth-child(1){
+                bottom: -20px;
+                left: 50px;
+            }
+            &:nth-child(2){
+                // bottom: -20px;
+                // left: 50%;
+                // transform: translateX(-50%);
+                
+                bottom: -20px;
+                right: 50px;
+            }
+            &:nth-child(3){
+                // bottom: -20px;
+                // right: 50px;
+                
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &:nth-child(4){
+                top: -30px;
+                left: 20%;
+            }
+            &:nth-child(5){
+                width: 80px;
+                height: 80px;
+                top: -10px;
+                right: 20%;
+            }
+        }
+        @include flex(center, center){
+
+        }
+        .l-t-wrap{
+            position: absolute;
+            @include flex(){
+
+            }
+            input[type=text]{
+                width: 350px;
+                height: 50px;
+                border: none;
+                border-radius: 25px;
+                box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+                margin-right: 20px;
+                font-size: 20px;
+                font-weight: 500;
+                text-align: center;
+                outline: none;
+                &::placeholder{
+                    color: #777;
+                }
+            }
+            input[type=submit]{
+                width: 120px;
+                height: 50px;
+                border-radius: 25px;
+                border: none;
+                background-color: #fff;
+                box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+                font-size: 20px;
+                color: $mC;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }
+    .l-bottom{
+        background-color: #fff;
+        // background-color: rgba(255,255,255,.2);
+        // backdrop-filter: blur(5px);
+        width: 100%;
+        @include flex(){
+            flex-direction: column;
+        }
+        .l-b-serch{
+            margin: 40px 0 90px;
+            width: 100%;
+            @include flex(center,center){
+                flex-direction: column;
+            }
+            h2{
+                color: $sC;
+                margin: 20px 0;
+                font-size: 28px;
+
+            }
+            .filter-box{
+                padding: 0 30px 0 40px;
+                @include flex(space-between, center){}
+                width: 100%;
+                h4{
+                    margin: 0;
+                    font-size: 16px;
+                    color: #535252;
+                    font-weight: normal;
+                }
+                .minus{
+                    @include flex(){}
+                    .hate{
+                        z-index: 7;
+                        padding: 10px 20px 10px 50px;
+                        border-radius: 25px;
+                        background-color: #F1F3F4;
+                        text-align: center;
+                        cursor: pointer;
+                        position: relative;
+                        @include flex(){}
+                        // transition: 0.4s 0.3s;
+                        &.active{
+                            // transition: 0s 0s;
+                            border-radius: 25px 25px 0 0;
+                            img{
+                                transform: rotateX(180deg);
+                            }
+                            ul{
+                                // transition: 0.4s;
+                                height: 200px;
+                                li{
+                                    padding: 10px 0;
+                                    // display: block;
+                                    font-size: 16px;
+                                    border-bottom: 1px solid $mC;
+                                    height: 25%;
+                                    p{
+                                        font-size: 18px;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        img{
+                            // transition: 0.5s;
+                            width: 18px;
+                            height: 10px;
+                            margin-left: 20px;
+                        }
+                        ul{
+                            // transition: 0.4s;
+                            height: 0;
+                            position: absolute;
+                            left: 0;
+                            top: 44px;
+                            width: 100%;
+                            padding: 0 15px;
+                            border-radius: 0 0 15px 15px;
+                            background-color: #F1F3F4;
+                            li{
+                                cursor: pointer;
+                                // display: none;
+                                height: 0;
+                                font-size: 0;
+                                &:last-child{
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                    p{
+                        font-size: 16px;
+                        margin-left: 10px;
+                        color: #535353;
+                    }
+                }
+            }
+        }
+        .l-b-content{
+            width: 100%;
+        }
+    }
+}
+
+
+@media screen and (max-width:767px) {
+
+    .list{
+        .l-top{
+            height: 120px;
+            .food-icon{
+                width: 80px;
+                height: 80px;
+                &:nth-child(1){
+                    bottom: -20px;
+                    left: 20px;
+                }
+                &:nth-child(2){
+                    bottom: -20px;
+                    right: 20px;
+                }
+                &:nth-child(5){
+                    width: 70px;
+                    height: 70px;
+                    top: -10px;
+                    right: 20%;
+                }
+            }
+            .l-t-wrap{
+                input[type=text]{
+                    width: 250px;
+                    height: 40px;
+                    font-size: 16px;
+                    margin: 7px;
+                }
+                input[type=submit]{
+                    width: 80px;
+                    height: 40px;
+                    font-size: 16px;
+                }
+            }
+        }
+        .l-bottom{
+            .l-b-serch{
+                margin: 15px 0 50px;
+                h2{
+                    color: $sC;
+                    margin: 20px 0 10px;
+                    font-size: 15px;
+    
+                }
+                .filter-box{
+                    padding: 0 10px;
+                    h4{
+                        font-size: 12px;
+                    }
+                    .minus{
+                        .hate{
+                            z-index: 7;
+                            padding: 5px 10px 5px 15px;
+                            font-size: 14px;
+                            &.active{
+                                border-radius: 15px 15px 0 0;
+                                ul{
+                                    // transition: 0.4s;
+                                    height: 150px;
+                                    li{
+                                        padding: 10px 0;
+                                        // display: block;
+                                        font-size: 12px;
+                                        border-bottom: 1px solid $mC;
+                                        height: 25%;
+                                        p{
+                                            font-size: 12px;
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            img{
+                                width: 15px;
+                                height: 7px;
+                            }
+                            ul{
+                                top: 30px;
+                                padding: 0 15px;
+                                border-radius: 0 0 15px 15px;
+                            }
+                        }
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

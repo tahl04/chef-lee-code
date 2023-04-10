@@ -1,0 +1,727 @@
+
+@mixin flex($a: space-around, $b: center) {
+    display: flex;
+    justify-content: $a;
+    align-items: $b;
+    @content;
+}
+
+@keyframes fade-in-bottom {
+    0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    }
+}
+
+$mC : #53A069;
+$sC : #2E483E;
+
+@keyframes upDown {
+    0% {
+        transform: translateY(5px);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(5px);
+    }
+}
+
+
+.scrolls{
+    opacity: 0;
+    transition: opacity 500ms;
+}
+.scrolls.scrolled{
+    opacity: 1;
+    animation: fade-in-bottom .7s ease-in-out both;
+}
+
+
+.m-wrap{
+    width: 100%;
+    // overflow: hidden;
+    box-shadow: 0 0 60px rgba(0,0,0,.4);
+    @include flex(){
+        flex-direction: column;
+    }
+    section{
+
+        height: calc(100vh - 250px);
+    }
+    .main-title{
+        width: 100%;
+        @include flex(center, center){}
+        background-size: cover;
+        background-position: 50% 50%;
+        img{
+            height: 170px;
+            width: 500px;
+        }
+    }
+    .main-app{
+        width: 100%;
+        overflow: hidden;
+        background-color: #fff;
+        // background-color: rgba(255,255,255,.2);
+        // backdrop-filter: blur(5px);
+        .a-wrap{
+            width: 100%;
+            height: 100%;
+            padding: 0 50px 0 40px;
+            @include flex(space-between, center){}
+            .a-img-wrap{
+                width: 50%;
+                height: 100%;
+                position: relative;
+                .app-box{
+                    position: absolute;
+                    width: 170px;
+                    height: 350px;
+                    border-radius: 16px;
+                    box-shadow: 0 0 56px rgba(0,0,0,.3);
+                    background: #fff;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        padding: 20px 0;
+                    }
+                    &:nth-child(1){
+                        bottom: 50px;
+                        left: 53%;
+                    }
+                    &:nth-child(2){
+                        bottom: -100px;
+                        left: 1%;
+                    }
+                    &:nth-child(3){
+                        bottom: 150px;
+                        left: 30%;
+                    }
+                }
+            }
+            .a-text-box{
+                width: 50%;
+                height: 100%;
+                margin-bottom: 40%;
+                @include flex(space-around,flex-end){
+                    flex-direction: column;
+                }
+                h2{
+                    padding-top: 400px;
+                    font-size: 28px;
+                    span{
+                        font-size: 28px;
+                        color: $mC;
+                    }
+                }
+                p{
+                    padding-top: 15px;
+                    font-size: 15px;
+                    margin: 0;
+                    color: #444;
+                    &:nth-child(3){
+                        padding: 0;
+                    }
+                }
+                .end-hight{
+                    margin-top: 70px;
+                    cursor: pointer;
+                    animation: upDown 2s infinite running;
+                    img{
+                        width: 90px;
+                        height: 100px;
+                    }
+                    &:hover{
+                        animation-play-state: paused;
+                    }
+                }
+            }
+        }
+    }
+    .scroll-chat{
+        width: 100%;
+        height: calc(600vh - 1200px);
+        position: relative;
+        // background-color: #e5eaee;
+        background: linear-gradient(291deg, rgba(180,180,180,1) 0%, rgba(232,232,232,1) 50%, rgba(180,180,180,1) 100%);
+        // background-color: rgba(174, 177, 180, 0.4);
+        // backdrop-filter: blur(5px);
+        .s-wrap{
+            width: calc(100% - 300px);
+            height: calc(100vh - 200px);
+            top: 200px;
+            left: 0px;
+            margin-left: 400px;
+            position: sticky;
+            padding: 0 20px 0 50px;
+            @include flex(flex-end,center){}
+            &:first-child{
+                left: 0;
+                width: 100%;
+                margin-left: 0;
+                .s-text-box{
+                    width: 50%;
+                }
+                .chat-box{
+                    width: 50%;
+                }
+            }
+            &:nth-child(2){
+                display: none;
+            }
+            .s-text-box{
+                width: calc(50% - 150px);
+                height: 40%;
+                @include flex(space-around,flex-start){
+                    flex-direction: column;
+                }
+                h2{
+                    color: #222;
+                    font-size: 38px;
+                    span{
+                        font-size: 38px;
+                        color: $mC;
+                    }
+                }
+                p{
+                    padding-top: 15px;
+                    font-size: 15px;
+                    margin: 0;
+                    color: #222;
+                    &:nth-child(3){
+                        padding: 0;
+                    }
+                }
+                .end-hight{
+                    cursor: pointer;
+                    margin-top: 80px;
+                    animation: upDown 2s infinite running;
+                    img{
+                        width: 90px;
+                        height: auto;
+                    }
+                    &:hover{
+                        animation-play-state: paused;
+                    }
+                }
+            }
+            .chat-box{
+                width: calc(50% + 150px);
+                height: 100%;
+                @include flex(center, center){}
+                .phone{
+                    width: 350px;
+                    height: 600px;
+                    background-size: cover;
+                    position: relative;
+                    img{
+                        position: absolute;
+                        width: 190px;
+                        left: -27px;
+                        height: auto;
+                    }
+                    .imo{
+                        left: -28px;
+                        width: 135px;
+                        bottom: 260px
+                    }
+                    .chat1{
+                        bottom: 470px;
+                    }
+                    .chat2{
+                        bottom: 390px;
+                    }
+                    .chat3{
+                        left: -17px;
+                        bottom: 170px;
+                    }
+                }
+            }
+        }
+    }
+    .list-link{
+        width: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        @include flex(center, flex-start){}
+        .link-wrap{
+            margin-top: 120px;
+            @include flex(space-between, center){
+                flex-direction: column;
+            }
+            h2{
+                margin-bottom: 50px;
+                font-size: 35px;
+            }
+            .list-btn{
+                img{
+                    width: 250px;
+                    height: 70px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1023px) {
+    .m-wrap{
+        width: 100%;
+        section{
+            height: calc(100vh - 150px);
+        }
+        .main-title{
+            width: 100%;
+            @include flex(center, center){}
+            background-size: cover;
+            background-position: 50% 50%;
+            img{
+                height: auto;
+                width: 550px;
+            }
+        }
+        .main-app{
+            width: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            .a-wrap{
+                padding: 0 30px 0 20px;
+                height: 100%;
+                @include flex(){
+                    flex-direction: column;
+                }
+                .a-img-wrap{
+                    width: 100%;
+                    height: 60%;
+                    position: relative;
+                    .app-box{
+                        position: absolute;
+                        width: 180px;
+                        height: 360px;
+                        border-radius: 8px;
+                        box-shadow: 0 0 16px rgba(0,0,0,.3);
+                        background: #fff;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            padding: 10px 0;
+                        }
+                        &:nth-child(1){
+                            bottom: 50%;
+                            left: 50%;
+                            transform: translate(calc(-50% + 150px), calc(50% + 80px));
+                        }
+                        &:nth-child(2){
+                            bottom: 50%;
+                            left: 50%;
+                            transform: translate(calc(-50% - 150px), calc(50% + 40px));
+                        }
+                        &:nth-child(3){
+                            bottom: 50%;
+                            left: 50%;
+                            transform: translate(-50%, calc(50% - 40px));
+                        }
+                    }
+                }
+                .a-text-box{
+                    width: 100%;
+                    height: 40%;
+                    margin-bottom: 0;
+                    @include flex(space-around,center){
+                        flex-direction: column;
+                    }
+                    h2{
+                        padding-top: 30px;
+                        font-size: 30px;
+                        line-height: .5;
+                        span{
+                            font-size: 30px;
+                            color: $mC;
+                        }
+                    }
+                    p{
+                        // padding-top: 7px;
+                        padding: 0;
+                        font-size: 18px;
+                        margin: 0;
+                        line-height: .5;
+                        color: #444;
+                        &:nth-child(3){
+                            padding: 0;
+                        }
+                    }
+                    .end-hight{
+                        margin-top: 0;
+                        cursor: pointer;
+                        animation: upDown 2s infinite running;
+                        img{
+                            width: 80px;
+                            height: auto;
+                        }
+                        &:hover{
+                            animation-play-state: paused;
+                        }
+                    }
+                }
+            }
+        }
+        .scroll-chat{
+            width: 100%;
+            height: calc(100vh - 200px);
+            position: relative;
+            // background-color: #e5eaee;
+            background: linear-gradient(291deg, rgba(180,180,180,1) 0%, rgba(232,232,232,1) 50%, rgba(180,180,180,1) 100%);
+            // background-color: rgba(174, 177, 180, 0.4);
+            // backdrop-filter: blur(5px);
+            .s-wrap{
+                width: calc(100% - 110px);
+                height: 100%;
+                top: 0;
+                left: 0px;
+                margin-left: 110px;
+                padding: 0 0 0 80px;
+                position: absolute;
+                overflow: hidden;
+                display: none;
+                &:nth-child(2){
+                    display: block;
+                    left: 0;
+                    width: 100%;
+                    margin-left: 0;
+                    @include flex(){}
+                    .s-text-box{
+                        width: calc(100% - 200px);
+                    }
+                    .chat-box{
+                        width: 500px;
+                        height: 100%;
+                    }
+                }
+                .s-text-box{
+                    h2{
+                        color: #222;
+                        font-size: 32px;
+                        span{
+                            font-size: 32px;
+                            color: $mC;
+                        }
+                    }
+                    p{
+                        padding-top: 15px;
+                        font-size: 18px;
+                        margin: 0;
+                        color: #222;
+                        &:nth-child(3){
+                            padding: 0;
+                        }
+                    }
+                    .end-hight{
+                        cursor: pointer;
+                        margin-top: 50px;
+                        animation: upDown 2s infinite running;
+                        img{
+                            width: 80px;
+                            height: auto;
+                        }
+                        &:hover{
+                            animation-play-state: paused;
+                        }
+                    }
+                }
+                .chat-box{
+                    width: 100%;
+                    height: 100%;
+                    transform: translateX(15px);
+                    @include flex(center, center){}
+                    .phone{
+                        width: 400px;
+                        height: 550px;
+                        background-size: cover;
+                        position: relative;
+                        img{
+                            position: absolute;
+                            width: 180px;
+                            left: 0;
+                            height: auto;
+                        }
+                        .imo{
+                            left: 55px;
+                            width: 130px;
+                            bottom: 300px
+                        }
+                        .chat1{
+                            left: 65px;
+                            bottom: 430px;
+                        }
+                        .chat2{
+                            left: 65px;
+                            bottom: 230px;
+                        }
+                        .chat3{
+                            left: 70px;
+                            bottom: 150px;
+                        }
+                    }
+                }
+            }
+        }
+        .list-link{
+            width: 100%;
+            height: 550px;
+            background-position: 100% 100%;
+            @include flex(center, flex-start){}
+            .link-wrap{
+                margin-top: 40px;
+                h2{
+                    color: #222;
+                    margin-bottom: 30px;
+                    font-size: 25px;
+                }
+                .list-btn{
+                    img{
+                        width: 150px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:767px) {
+    /* 모바일 */
+
+    .scrolls{
+        opacity: 1;
+    }
+    .scrolls.scrolled{
+        opacity: 1;
+    }
+    .m-wrap{
+        width: 100%;
+        section{
+            height: calc(100vh - 150px);
+        }
+        .main-title{
+            width: 100%;
+            @include flex(center, center){}
+            background-size: cover;
+            background-position: 50% 50%;
+            img{
+                height: 90px;
+                width: 250px;
+            }
+        }
+        .main-app{
+            width: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            .a-wrap{
+                padding: 0 30px 0 20px;
+                height: 100%;
+                @include flex(){
+                    flex-direction: column;
+                }
+                .a-img-wrap{
+                    width: 100%;
+                    height: 60%;
+                    position: relative;
+                    .app-box{
+                        position: absolute;
+                        width: 100px;
+                        height: 200px;
+                        border-radius: 8px;
+                        box-shadow: 0 0 16px rgba(0,0,0,.3);
+                        background: #fff;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            padding: 10px 0;
+                        }
+                        &:nth-child(1){
+                            bottom: 50%;
+                            left: 50%;
+                            transform: translate(calc(-50% + 70px), calc(50% + 80px));
+                        }
+                        &:nth-child(2){
+                            bottom: 50%;
+                            left: 50%;
+                            transform: translate(calc(-50% - 70px), calc(50% + 40px));
+                        }
+                        &:nth-child(3){
+                            bottom: 50%;
+                            left: 50%;
+                            transform: translate(-50%, calc(50% - 40px));
+                        }
+                    }
+                }
+                .a-text-box{
+                    width: 100%;
+                    height: 40%;
+                    margin-bottom: 0;
+                    @include flex(space-around,center){
+                        flex-direction: column;
+                    }
+                    h2{
+                        padding-top: 30px;
+                        font-size: 20px;
+                        line-height: .5;
+                        span{
+                            font-size: 20px;
+                            color: $mC;
+                        }
+                    }
+                    p{
+                        // padding-top: 7px;
+                        padding: 0;
+                        font-size: 13px;
+                        margin: 0;
+                        line-height: .5;
+                        color: #444;
+                        &:nth-child(3){
+                            padding: 0;
+                        }
+                    }
+                    .end-hight{
+                        margin-top: 0;
+                        cursor: pointer;
+                        animation: upDown 2s infinite running;
+                        img{
+                            width: 50px;
+                            height: auto;
+                        }
+                        &:hover{
+                            animation-play-state: paused;
+                        }
+                    }
+                }
+            }
+        }
+        .scroll-chat{
+            width: 100%;
+            height: calc(100vh - 200px);
+            position: relative;
+            // background-color: #e5eaee;
+            background: linear-gradient(291deg, rgba(180,180,180,1) 0%, rgba(232,232,232,1) 50%, rgba(180,180,180,1) 100%);
+            // background-color: rgba(174, 177, 180, 0.4);
+            // backdrop-filter: blur(5px);
+            .s-wrap{
+                width: calc(100% - 60px);
+                height: 100%;
+                top: 0;
+                left: 0px;
+                margin-left: 60px;
+                padding: 0 0 0 15px;
+                position: absolute;
+                overflow: hidden;
+                display: none;
+                &:nth-child(2){
+                    display: block;
+                    left: 0;
+                    width: 100%;
+                    margin-left: 0;
+                    @include flex(){}
+                    .s-text-box{
+                        width: calc(100% - 200px);
+                    }
+                    .chat-box{
+                        width: 200px;
+                    }
+                }
+                .s-text-box{
+                    h2{
+                        color: #222;
+                        font-size: 21px;
+                        span{
+                            font-size: 21px;
+                            color: $mC;
+                        }
+                    }
+                    p{
+                        padding-top: 15px;
+                        font-size: 11px;
+                        margin: 0;
+                        color: #222;
+                        &:nth-child(3){
+                            padding: 0;
+                        }
+                    }
+                    .end-hight{
+                        cursor: pointer;
+                        margin-top: 50px;
+                        animation: upDown 2s infinite running;
+                        img{
+                            width: 50px;
+                            height: auto;
+                        }
+                        &:hover{
+                            animation-play-state: paused;
+                        }
+                    }
+                }
+                .chat-box{
+                    width: 100%;
+                    height: 50%;
+                    transform: translateX(15px);
+                    @include flex(center, center){}
+                    .phone{
+                        width: 300px;
+                        height: 250px;
+                        background-size: cover;
+                        position: relative;
+                        img{
+                            position: absolute;
+                            width: 90px;
+                            left: 0;
+                        }
+                        .imo{
+                            left: 30px;
+                            width: 50px;
+                            bottom: 135px
+                        }
+                        .chat1{
+                            left: 30px;
+                            bottom: 190px;
+                        }
+                        .chat2{
+                            left: 30px;
+                            bottom: 95px;
+                        }
+                        .chat3{
+                            left: 40px;
+                            bottom: 55px;
+                        }
+                    }
+                }
+            }
+        }
+        .list-link{
+            width: 100%;
+            height: 550px;
+            background-position: 100% 100%;
+            @include flex(center, flex-start){}
+            .link-wrap{
+                margin-top: 40px;
+                h2{
+                    color: #222;
+                    margin-bottom: 30px;
+                    font-size: 25px;
+                }
+                .list-btn{
+                    img{
+                        width: 150px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
+    }
+    }
+
+   

@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Poppins:wght@400&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p,a, 
+img, ul, li, nav,video, figure, section{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+img{
+    display: block;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+ol, ul {
+	list-style: none;
+}
+@mixin flex($a: space-around, $b: center) {
+    display: flex;
+    justify-content: $a;
+    align-items: $b;
+    @content;
+}
+
+$mC : #53A069;
+$sC : #2E483E;
+
+::-webkit-scrollbar {
+    display: none;
+    // width: 10px;
+
+}
+// ::-webkit-scrollbar-track {
+//     background-color: rgba(83, 160, 105, .3);
+// }
+// ::-webkit-scrollbar-thumb {
+//     background-color: #53A069;
+//     border-radius: 4px;
+// }
+
+//header
+
+.cheflee{
+    width: 100vw;
+    background-size: cover;
+    background-position: 10% 50%;
+    position: relative;
+    .main-bg{
+        display: block;
+        position: fixed;
+        width: 85%;
+        height: 110%;
+        background-size: cover;
+        background-position: 50% 50%;
+        left: -7%;
+        bottom: 0;
+    }
+    .web-title{
+        display: block;
+        position: fixed;
+        bottom: 18%;
+        left: 5%;
+        @include flex(center,flex-start){
+            flex-direction: column;
+        }
+        h1{
+            font-size: calc(2vw + 60px);
+            font-weight: bold;
+        }
+        p{
+            font-size: calc(.6vw + 12px);
+            font-weight: bold;
+            color: #5e5c5c;
+        }
+    }
+    .chef-app{
+        width: 800px;
+        height: 100vh;
+        top: 0;
+        right : 200px;
+        // left: 0;
+        position: absolute;
+        // .header-wraps{
+        //     width: 100%;
+        //     position: relative;
+        // }
+    }
+}
+
+.header-empty-box{
+    width: 100%;
+    height: 80px;
+}
+
+.header{
+    width: 800px;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,.2));
+    position: fixed;
+    top: 0;
+    // left: 0;
+    right : 200px;
+    z-index: 99;
+    
+    .logo-img{
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        transform: translateY(-50%);
+        img{
+            width: 90px;
+            height: auto;
+            object-fit: cover;
+            background-size: cover;
+            background-repeat: no-repeat; 
+        }
+    }
+    .header-menu{
+        display: flex;
+        font-weight: bolder;
+        color: #2E483E;
+        justify-content: flex-end;
+        margin-right: 70px;
+        a{
+            padding: 30px;
+        }
+    }
+
+}
+
+div.footer{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 10px 20px #dddddd);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .logo-img-footer{
+        margin-left: 100px;
+        img{
+            width: 110px;
+            height: auto;
+            object-fit: cover;
+            background-size: cover;
+            background-repeat: no-repeat; 
+        }
+    }
+    .footer-t{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 15px;
+        color: rgb(85, 85, 85);
+        margin-right: 100px;
+    }
+}
+
+button.topBtn{
+    position: fixed;
+    z-index: 999;
+    bottom: 3%;
+    right: 10%;
+    transform: translate(-50%,-50%);
+    border: none;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background-color: rgb(32, 81, 44);
+    font-size: 0rem;
+}
+
+// @media screen and (max-width:1023px) {
+//     /* 타블렛 */
+//     .header{
+//         width: 100vw;
+//         top: 0;
+//         right: 0;
+//         left: 0;
+//         transform: translate(0);
+//         .logo-img{
+//             left: 15px;
+//             img{
+//                 width: 60px;
+//             }
+//         }
+//         .header-menu{
+//             margin-right: 20px;
+//             a{
+//                 padding: 30px 10px;
+//                 font-size: 15px;
+//             }
+//         }
+
+//     }
+//     .cheflee{
+//         width: 100vw;
+//         transform: translate(0);
+//         .chef-app{
+//             width: 100%;
+//             right: 0;
+//             left: 0;
+//         }
+//         .main-bg{
+//             display: none;
+//         }
+//         .web-title{
+//             display: none;
+//         }
+//     }
+// }
+
+@media screen and (max-width:767px) {
+/* 모바일 */
+    .header{
+        width: 100vw;
+        top: 0;
+        right: 0;
+        left: 0;
+        transform: translate(0);
+        .logo-img{
+            left: 15px;
+            img{
+                width: 60px;
+            }
+        }
+        .header-menu{
+            margin-right: 20px;
+            a{
+                padding: 30px 10px;
+                font-size: 15px;
+            }
+        }
+
+    }
+    .cheflee{
+        width: 100vw;
+        transform: translate(0);
+        .chef-app{
+            width: 100%;
+            right: 0;
+            left: 0;
+        }
+        .main-bg{
+            display: none;
+        }
+        .web-title{
+            display: none;
+        }
+    }
+    div.footer{
+        width: 100%;
+        height: 70px;
+        background-color: rgb(255, 255, 255);
+        filter: drop-shadow(0px 10px 20px #dddddd);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .logo-img-footer{
+            margin-left: 10px;
+            img{
+                width: 60px;
+                height: auto;
+            }
+        }
+        .footer-t{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            font-size: 15px;
+            color: rgb(85, 85, 85);
+            margin-right: 10px;
+        }
+    }
+    button.topBtn{
+        position: fixed;
+        z-index: 999;
+        bottom: 3%;
+        right: 10%;
+        transform: translate(-50%,-50%);
+        border: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: rgb(32, 81, 44);
+        font-size: 0rem;
+    }
+}
+
+.loading-anim{
+    width: 100vw;
+    height: 100vh;
+    background-color: $mC;
+    @include flex(){}
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+}

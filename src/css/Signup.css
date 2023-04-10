@@ -1,0 +1,71 @@
+div.chef-lee-background {
+  width: 90%;
+  margin: 150px auto;
+}
+div.chef-lee-background img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.login-component {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div.login-component h4 {
+  font-weight: 900;
+  color: #2E483E;
+  width: 500px;
+  margin: 0px auto;
+  padding: 20px;
+  font-size: 25px;
+}
+div.login-component form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0px auto;
+}
+div.login-component form input {
+  width: 100%;
+  height: 60px;
+  border-radius: 15px;
+  border: 1px solid #454545;
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+div.login-component form .submit-btn {
+  background-color: #55A06A;
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 19px;
+}
+div.login-component form a {
+  padding: 10px;
+}
+div.login-component form b {
+  color: #2E483E;
+  font-weight: 500;
+  position: relative;
+}
+div.login-component form b::after {
+  content: "";
+  width: 100%;
+  height: 1.5px;
+  background-color: #2E483E;
+  position: absolute;
+  left: 50%;
+  top: 110%;
+  transform: translateX(-50%);
+}/*# sourceMappingURL=Signup.css.map */
