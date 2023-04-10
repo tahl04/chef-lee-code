@@ -69,9 +69,9 @@ $sC : #2E483E;
     .main-app{
         width: 100%;
         overflow: hidden;
-        background-color: #fff;
-        // background-color: rgba(255,255,255,.2);
-        // backdrop-filter: blur(5px);
+        // background-color: #fff;
+        background-color: rgba(255,255,255,.2);
+        backdrop-filter: blur(5px);
         .a-wrap{
             width: 100%;
             height: 100%;
@@ -151,9 +151,9 @@ $sC : #2E483E;
         height: calc(600vh - 1200px);
         position: relative;
         // background-color: #e5eaee;
-        background: linear-gradient(291deg, rgba(180,180,180,1) 0%, rgba(232,232,232,1) 50%, rgba(180,180,180,1) 100%);
+        background: linear-gradient(291deg, rgba(3,3,3,.4) 0%, rgba(232,232,232,1) 50%, rgba(3,3,3,.4) 100%);
         // background-color: rgba(174, 177, 180, 0.4);
-        // backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         .s-wrap{
             width: calc(100% - 300px);
             height: calc(100vh - 200px);

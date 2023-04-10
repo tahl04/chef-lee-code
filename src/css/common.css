@@ -158,44 +158,6 @@ button.topBtn {
   font-size: 0rem;
 }
 
-@media screen and (max-width: 1023px) {
-  /* 타블렛 */
-  .header {
-    width: 100vw;
-    top: 0;
-    right: 0;
-    left: 0;
-    transform: translate(0);
-  }
-  .header .logo-img {
-    left: 15px;
-  }
-  .header .logo-img img {
-    width: 60px;
-  }
-  .header .header-menu {
-    margin-right: 20px;
-  }
-  .header .header-menu a {
-    padding: 30px 10px;
-    font-size: 15px;
-  }
-  .cheflee {
-    width: 100vw;
-    transform: translate(0);
-  }
-  .cheflee .chef-app {
-    width: 100%;
-    right: 0;
-    left: 0;
-  }
-  .cheflee .main-bg {
-    display: none;
-  }
-  .cheflee .web-title {
-    display: none;
-  }
-}
 @media screen and (max-width: 767px) {
   /* 모바일 */
   .header {
@@ -271,4 +233,15 @@ button.topBtn {
     background-color: rgb(32, 81, 44);
     font-size: 0rem;
   }
+}
+.loading-anim {
+  width: 100vw;
+  height: 100vh;
+  background-color: #53A069;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
 }/*# sourceMappingURL=common.css.map */

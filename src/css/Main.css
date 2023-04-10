@@ -78,7 +78,9 @@
 .m-wrap .main-app {
   width: 100%;
   overflow: hidden;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 .m-wrap .main-app .a-wrap {
   width: 100%;
@@ -162,7 +164,9 @@
   width: 100%;
   height: calc(600vh - 1200px);
   position: relative;
-  background: linear-gradient(291deg, rgb(180, 180, 180) 0%, rgb(232, 232, 232) 50%, rgb(180, 180, 180) 100%);
+  background: linear-gradient(291deg, rgba(3, 3, 3, 0.4) 0%, rgb(232, 232, 232) 50%, rgba(3, 3, 3, 0.4) 100%);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 .m-wrap .scroll-chat .s-wrap {
   width: calc(100% - 300px);
@@ -288,6 +292,235 @@
   height: 70px;
 }
 
+@media screen and (max-width: 1023px) {
+  .m-wrap {
+    width: 100%;
+  }
+  .m-wrap section {
+    height: calc(100vh - 150px);
+  }
+  .m-wrap .main-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .m-wrap .main-title img {
+    height: auto;
+    width: 550px;
+  }
+  .m-wrap .main-app {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  .m-wrap .main-app .a-wrap {
+    padding: 0 30px 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .m-wrap .main-app .a-wrap .a-img-wrap {
+    width: 100%;
+    height: 60%;
+    position: relative;
+  }
+  .m-wrap .main-app .a-wrap .a-img-wrap .app-box {
+    position: absolute;
+    width: 180px;
+    height: 360px;
+    border-radius: 8px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+    background: #fff;
+  }
+  .m-wrap .main-app .a-wrap .a-img-wrap .app-box img {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+  }
+  .m-wrap .main-app .a-wrap .a-img-wrap .app-box:nth-child(1) {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 150px), calc(50% + 80px));
+  }
+  .m-wrap .main-app .a-wrap .a-img-wrap .app-box:nth-child(2) {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - 150px), calc(50% + 40px));
+  }
+  .m-wrap .main-app .a-wrap .a-img-wrap .app-box:nth-child(3) {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(50% - 40px));
+  }
+  .m-wrap .main-app .a-wrap .a-text-box {
+    width: 100%;
+    height: 40%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .m-wrap .main-app .a-wrap .a-text-box h2 {
+    padding-top: 30px;
+    font-size: 30px;
+    line-height: 0.5;
+  }
+  .m-wrap .main-app .a-wrap .a-text-box h2 span {
+    font-size: 30px;
+    color: #53A069;
+  }
+  .m-wrap .main-app .a-wrap .a-text-box p {
+    padding: 0;
+    font-size: 18px;
+    margin: 0;
+    line-height: 0.5;
+    color: #444;
+  }
+  .m-wrap .main-app .a-wrap .a-text-box p:nth-child(3) {
+    padding: 0;
+  }
+  .m-wrap .main-app .a-wrap .a-text-box .end-hight {
+    margin-top: 0;
+    cursor: pointer;
+    -webkit-animation: upDown 2s infinite running;
+            animation: upDown 2s infinite running;
+  }
+  .m-wrap .main-app .a-wrap .a-text-box .end-hight img {
+    width: 80px;
+    height: auto;
+  }
+  .m-wrap .main-app .a-wrap .a-text-box .end-hight:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  .m-wrap .scroll-chat {
+    width: 100%;
+    height: calc(100vh - 200px);
+    position: relative;
+    background: linear-gradient(291deg, rgb(180, 180, 180) 0%, rgb(232, 232, 232) 50%, rgb(180, 180, 180) 100%);
+  }
+  .m-wrap .scroll-chat .s-wrap {
+    width: calc(100% - 110px);
+    height: 100%;
+    top: 0;
+    left: 0px;
+    margin-left: 110px;
+    padding: 0 0 0 80px;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+  }
+  .m-wrap .scroll-chat .s-wrap:nth-child(2) {
+    display: block;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .m-wrap .scroll-chat .s-wrap:nth-child(2) .s-text-box {
+    width: calc(100% - 200px);
+  }
+  .m-wrap .scroll-chat .s-wrap:nth-child(2) .chat-box {
+    width: 500px;
+    height: 100%;
+  }
+  .m-wrap .scroll-chat .s-wrap .s-text-box h2 {
+    color: #222;
+    font-size: 32px;
+  }
+  .m-wrap .scroll-chat .s-wrap .s-text-box h2 span {
+    font-size: 32px;
+    color: #53A069;
+  }
+  .m-wrap .scroll-chat .s-wrap .s-text-box p {
+    padding-top: 15px;
+    font-size: 18px;
+    margin: 0;
+    color: #222;
+  }
+  .m-wrap .scroll-chat .s-wrap .s-text-box p:nth-child(3) {
+    padding: 0;
+  }
+  .m-wrap .scroll-chat .s-wrap .s-text-box .end-hight {
+    cursor: pointer;
+    margin-top: 50px;
+    -webkit-animation: upDown 2s infinite running;
+            animation: upDown 2s infinite running;
+  }
+  .m-wrap .scroll-chat .s-wrap .s-text-box .end-hight img {
+    width: 80px;
+    height: auto;
+  }
+  .m-wrap .scroll-chat .s-wrap .s-text-box .end-hight:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  .m-wrap .scroll-chat .s-wrap .chat-box {
+    width: 100%;
+    height: 100%;
+    transform: translateX(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .m-wrap .scroll-chat .s-wrap .chat-box .phone {
+    width: 400px;
+    height: 550px;
+    background-size: cover;
+    position: relative;
+  }
+  .m-wrap .scroll-chat .s-wrap .chat-box .phone img {
+    position: absolute;
+    width: 180px;
+    left: 0;
+    height: auto;
+  }
+  .m-wrap .scroll-chat .s-wrap .chat-box .phone .imo {
+    left: 55px;
+    width: 130px;
+    bottom: 300px;
+  }
+  .m-wrap .scroll-chat .s-wrap .chat-box .phone .chat1 {
+    left: 65px;
+    bottom: 430px;
+  }
+  .m-wrap .scroll-chat .s-wrap .chat-box .phone .chat2 {
+    left: 65px;
+    bottom: 230px;
+  }
+  .m-wrap .scroll-chat .s-wrap .chat-box .phone .chat3 {
+    left: 70px;
+    bottom: 150px;
+  }
+  .m-wrap .list-link {
+    width: 100%;
+    height: 550px;
+    background-position: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .m-wrap .list-link .link-wrap {
+    margin-top: 40px;
+  }
+  .m-wrap .list-link .link-wrap h2 {
+    color: #222;
+    margin-bottom: 30px;
+    font-size: 25px;
+  }
+  .m-wrap .list-link .link-wrap .list-btn img {
+    width: 150px;
+    height: 45px;
+  }
+}
 @media screen and (max-width: 767px) {
   /* 모바일 */
   .scrolls {

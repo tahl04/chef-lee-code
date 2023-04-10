@@ -122,9 +122,9 @@ $sC : #2E483E;
         }
     }
     .l-bottom{
-        background-color: #fff;
-        // background-color: rgba(255,255,255,.2);
-        // backdrop-filter: blur(5px);
+        // background-color: #fff;
+        background-color: rgba(255,255,255,.2);
+        backdrop-filter: blur(5px);
         width: 100%;
         @include flex(){
             flex-direction: column;
@@ -148,7 +148,7 @@ $sC : #2E483E;
                 h4{
                     margin: 0;
                     font-size: 16px;
-                    color: #535252;
+                    color: #272727;
                     font-weight: normal;
                 }
                 .minus{
