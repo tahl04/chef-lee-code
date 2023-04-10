@@ -135,29 +135,6 @@ function App() {
     hate.current.classList.toggle('active');
     let arr1 = [];
     e.preventDefault();
-    // data.map((obj, key)=>{
-    //   try{
-    //     obj.hashtag.forEach((objs)=>{
-    //       if(objs === e.target.innerText){
-    //         arr1.push(key)
-    //       }
-    //     })
-    //   }catch{}
-    // })
-    // setHate(arr1);
-    // let arr2 = num;
-    // num.map(obj=>{
-    //   hateFilter.forEach((objs,key)=>{
-    //     if(obj === objs){
-    //     // try{
-    //       arr2.splice(objs, 1)
-    //     // }catch{
-    //     // }
-    //     }
-    //   })
-      
-    //   // setNum(arr2);
-    // })
   }
 
   return (
