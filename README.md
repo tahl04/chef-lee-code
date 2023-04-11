@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# 🥦🍅🥬 냉장고 속 갖가지 레시피 Chef Lee 🧅🧄🥔
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![banner](https://velog.velcdn.com/images/daun/post/ef43a2d9-cb0c-4a32-b647-1a5fe566f9d3/image.png)
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## 🌱 프로젝트 소개및 제작 계기
+냉장고를 관리해주는 어플로 재료를 쉽고 편리하게 관리 할 수 있고, 냉장고 속 재료로 만들 수 있는 음식의 조리법, 영양 성분에 관한 자료를 제공해주는 모바일 전용 사이트입니다.
 
-### `npm start`
+React를 기반으로 한 프로젝트를 만들기로 했습니다.
+외부의 api를 받아와 프로젝트를 만들고 싶다는 생각이 들어 무료 api자료들을 찾아보던 중 식품의약품안전처에서 제공하는 조리식품의 레시피DB라는 api를 찾게 되어 요리 레시피 관련 프로젝트를 구상했습니다.
+요리 관련 웹사이트 아이디어 구상 중에 자취할때 요리를 해 먹으려 사놓은 재료들을 다 쓰지 않은 채로 아깝게 버려지던 생각이 나서,특정 재료만을 입력하여 만들 수 있는 요리 레시피를 보여주는 웹사이트를 만들어야겠다고 생각했습니다. 그렇게 자취생들과 주부를 대상으로 한 CHEF LEE 라는 웹 사이트를 기획하였습니다. 여기서 CHEF LEE의 뜻은 저와 팀원 어머니의 이름 성씨에서 따왔고, 엄마가 해주던 맛있는 음식이라는 뜻을 품고 있습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
 
-### `npm test`
+## ☘️ 주요기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 🔐 firebase서버를 통한 로그인
 
-### `npm run build`
+- fairebase/auth를 사용하여 세션을 관리하였고, 구글 아이디를 통하여 로그인도 가능하도록 구현하였습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 📧 정규식
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 서버에 부하가 일어나지 않기 위해, 사용하는 데이터만 최소화 하여 가져오고 또한 정규식을 사용하여 문자들의 균일화를 해서 다듬은 데이터들을 변수로 담아 프로젝트 전역에서 사용하였습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### ✔ 파라미터를 통한 링크 이동
+- 각 버튼을 클릭하여 해당 음식의 조리법, 해당 음식의 재료를 살 수 있는 페이지로 이동합니다.
 
-### `npm run eject`
+#### ❤️ 레시피 찜
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 마음에 드는 레시피를 저장할 수 있습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 📱 재료 관리
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 냉장고의 남은 재료들과 유통기한을 입력하여 관리할 수 있고, 해당 재료가 포함된 레시피를 보러 갈 수 있습니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### 🪄 스크롤 저장
 
-## Learn More
+- 페이지 이동 전 위치값을 저장하여 뒤로가기 버튼 클릭 시 위치값을 기억하여 불러드립니다.
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔨 기술스택
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Tech**
 
-### Code Splitting
+<p>
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white"/>
+<img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"/>
+<br>
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **Design**
+<p>
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white"/>
+</p>
 
-### Analyzing the Bundle Size
+### **Tools**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p>
+<img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/>
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"/>
+<img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=github&logoColor=white">
+<br>
+</p>
 
-### Making a Progressive Web App
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ 
+<!--  ## 🖥 Core tech
+### 🔐 회원가입/로그인/사용자 인증 : 카카오/네이버 소셜로그인,JWT 토큰 방식(Access token/Refresh token)
+- 카카오와 네이버 소셜로그인으로 별도 회원가입 과정 없이 간단하게 가입  
+- JWT 토큰 인증 방식을 통해 회원들의 로그인 인증관리 및 Access / Refresh 토큰을 활용하여 로그인 기간 관리
 
-### Advanced Configuration
+### 📷 카카오 지도 코스 그리기 및 거리/소요시간 자동 측정
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- 카카오 지도를 활용하여 지도 위에 나만의 코스를 그리고 거리/소요시간이 자동 측정
 
-### Deployment
+### 💻 반응형 미디어 쿼리(react-responsive)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- 모바일 사용자가 많은점을 고려하여 데스크탑,노트북,모바일 최적화 진행
 
-### `npm run build` fails to minify
+### ⏰ 게시물 중복 필터
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 러닝의 특성상 여러가지 환
+
+<br/>
+
+## 🔥 Trouble shooting
+<details>
+<summary><strong> issue1: 페이지 전환 시 애니메이션 및 스크롤 오류 </strong></summary>
+
+#### 🙁 situation
+
+- 메인 페이지에 있는 스크롤에 의한 애니메이션이 페이지 전환이 있고, 다시 복귀하였을 때 다시 애니메이션이 일어나지 않았다.이유는 페이지 이동을 하면서 나의 초기 스크롤 위치를 설정해주는 함수가 작동하지 않아서 였다.
+
+#### 🚥 solution
+
+- useLocation을 이용하여 페이지가 재할당 되었을 시 함수를 다시 실행하게 하여, 문제 없이 사용 할 수 있었다.
+</details>
+<details>
+<summary><strong> issue2: 배포 환경 </strong></summary>
+
+#### 🙁 situation
+
+- 리엑트는 오로지 js형식으로 만들어지기 때문에, 그냥 작성한 코드만을 올리면 배포가 되지 않았던 걸 몰랐다. 찾아본 결과 컴파일 작업이 필요하다는 것을 알게 되었다.
+
+#### 🚥 solution
+
+- 빌드하는 과정에 대해 공부하여 컴파일 하였고, 변환한 html로 깃허브 레파지토리에 업로드 하였다.
+</details>
+
+
+
+<br></br>
+## 🌸 와이어프레임
+
+[💾 와이어프레임](https://www.figma.com/file/CDKNOSVNT8V3OlYs3LGKxf/%EB%83%89%EC%9E%A5%EA%B3%A0?node-id=0-1&t=sGMlded8uHaRp1ZE-0)
+
+<br></br>
